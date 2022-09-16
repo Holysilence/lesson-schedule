@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Teaching Schedule</h1>
+<h3>Monday-Thursday</h3>
+<div>
+
+    {% for student in students %}
+        <div class="studentname">
+            <a href="{% url 'student_detail' student.id %}">
+            <h3>{{ student.name|capfirst }}</h3>
+            </a>
+            <p>Day: {{ student.day }}</p>
+            <p>Time: {{ student.time }}</p>
+            <p>Grade: {{ student.grade }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

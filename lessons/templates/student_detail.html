@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+            <p> {{ student.name }}</p>
+            <p>Day: {{ student.day }}</p>
+            <p>Time: {{ student.time }}</p>
+            {% if pet.location.all %}
+                <p>Location: {% for school in student.location.all %}
+                                {{location.name}}</p>
+                             {% endfor %}
+            {% endif %}
+            <p>Grade: {{ student.grade }}</p>
+</div>
+{% endblock %}
